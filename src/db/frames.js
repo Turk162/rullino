@@ -21,6 +21,27 @@ export async function getLastFrame(rollId) {
   return frames.length ? frames[frames.length - 1] : null
 }
 
+export function getFrame(id) {
+  return db.frames.get(id)
+}
+
+// Modifica parziale di uno scatto (incluse Esito/Lezione dopo lo sviluppo).
+export async function updateFrame(id, changes) {
+  const patch = { ...changes }
+  if ('frameNumber' in patch) patch.frameNumber = Number(patch.frameNumber)
+  for (const k of ['light', 'subject', 'intention', 'result', 'lesson']) {
+    if (k in patch) patch[k] = (patch[k] || '').trim()
+  }
+  if ('shutter' in patch) patch.shutter = patch.shutter || null
+  if ('aperture' in patch) patch.aperture = patch.aperture || null
+  if ('tags' in patch) patch.tags = Array.isArray(patch.tags) ? patch.tags : []
+  await db.frames.update(id, patch)
+}
+
+export function deleteFrame(id) {
+  return db.frames.delete(id)
+}
+
 // Crea uno scatto collegato al rullino. Esito e Lezione restano vuoti
 // (si compilano dopo lo sviluppo, SPEC §7.4).
 export async function createFrame(data) {

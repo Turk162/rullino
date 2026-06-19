@@ -218,7 +218,9 @@ export default function Rolls() {
               className={`card roll-card${isActive ? ' active' : ''}`}
             >
               <div className="roll-head">
-                <span className="roll-name">{roll.name || '(senza nome)'}</span>
+                <Link to={`/rolls/${roll.id}`} className="roll-name roll-link">
+                  {roll.name || '(senza nome)'} ›
+                </Link>
                 {isActive && <span className="badge">ATTIVO</span>}
               </div>
 
