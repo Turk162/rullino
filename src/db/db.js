@@ -8,9 +8,11 @@ export const db = new Dexie('rullino')
 //   Roll:  id, name, camera, lens, filmStock, iso, status, startDate, notes, createdAt
 //   Frame: id, rollId, frameNumber, shutter, aperture, mode, light, subject,
 //          intention, tags, result, lesson, createdAt
+//   settings: key-value locale (es. quale rullino è attivo). Non sono dati di scatto.
 db.version(1).stores({
   rolls: 'id, status, createdAt',
   frames: 'id, rollId, [rollId+frameNumber], createdAt',
+  settings: 'key',
 })
 
 export default db

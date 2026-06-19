@@ -37,7 +37,189 @@ body {
   margin: 0 0 0.5rem;
 }
 
-.home .ok {
-  color: var(--accent);
+.home .btn {
+  margin-top: 1rem;
+  min-width: 12rem;
+}
+
+/* --- Layout schermate --- */
+.screen {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.topbar h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.back {
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+/* --- Bottoni (tap target >= 44px) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
   font-weight: 600;
+  color: var(--fg);
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0a0a0a;
+  width: 100%;
+}
+
+/* --- Card --- */
+.card {
+  background: #1c1c1c;
+  border: 1px solid #2c2c2c;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Form --- */
+.form h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+.form input,
+.form textarea,
+.status-row select {
+  min-height: 48px;
+  padding: 0.6rem 0.7rem;
+  font-size: 1rem;
+  color: var(--fg);
+  background: #121212;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+}
+
+.form textarea {
+  min-height: auto;
+  resize: vertical;
+}
+
+.form input:focus,
+.form textarea:focus,
+.status-row select:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.form-actions .btn {
+  flex: 1;
+}
+
+/* --- Lista rullini --- */
+.empty {
+  color: #888;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.roll-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.roll-card.active {
+  border-color: var(--accent);
+}
+
+.roll-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.roll-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #0a0a0a;
+  background: var(--accent);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+.roll-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin: 0.5rem 0 0.75rem;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-bottom: 0.75rem;
+}
+
+.status-row select {
+  flex: 1;
+}
+
+.roll-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.roll-actions .btn {
+  flex: 1;
 }
