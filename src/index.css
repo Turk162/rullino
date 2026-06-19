@@ -1,0 +1,43 @@
+:root {
+  color-scheme: dark;
+  --bg: #121212;
+  --fg: #f2f2f2;
+  --accent: #4caf50;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.home h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.home .ok {
+  color: var(--accent);
+  font-weight: 600;
+}
